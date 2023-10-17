@@ -2,10 +2,11 @@ pipeline {
 	agent any
 	stages {
 		stage('Checkout SCM') {
-			steps {
-				git '/JenkinsDependencyCheckTest'
-			}
-		}
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/ShaunVSIT/JenkinsDependencyCheckTest'
+            }
+        }
 
 		stage('OWASP DependencyCheck') {
 			steps {
